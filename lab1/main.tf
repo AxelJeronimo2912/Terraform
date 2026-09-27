@@ -10,6 +10,6 @@ terraform {
 }
 
 resource "random_string" "suffix" {
-  length  = 16
+  length  = var.length
   special = true
 }
