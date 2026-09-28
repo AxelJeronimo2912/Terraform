@@ -20,9 +20,9 @@ variable "environment" {
 
 variable "location" {
   description = "The Azure region where resources will be deployed."
-  type        = string
+  type        = list(string)
 
-  default = "mexicocentral"
+  default = ["10.10.0.0/16"]
 }
 
 variable "vnet_address_space" {
@@ -36,4 +36,11 @@ variable "tags" {
   description = "A map of tags to assign to resources."
   type        = map(string)
   default     = "terraform" 
+}
+
+variable "subscription_id" {
+  description = "The Azure subscription ID."
+  type        = string
+  default     = "23b0f1b0-ae01-4523-8bc6-e9f3b1a105a2"
+  sensitive   = true
 }
