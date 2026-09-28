@@ -20,22 +20,22 @@ variable "environment" {
 
 variable "location" {
   description = "The Azure region where resources will be deployed."
-  type        = list(string)
-
-  default = ["10.10.0.0/16"]
+  type        = string         
+  default     = "mexicocentral"
 }
 
 variable "vnet_address_space" {
   description = "The address space for the virtual network."
-  type        = string
-
-  default = "10.0.0.0/16"
+  type        = list(string)    
+  default     = ["10.10.0.0/16"]
 }
 
 variable "tags" {
   description = "A map of tags to assign to resources."
   type        = map(string)
-  default     = "terraform" 
+  default = {
+    Name = "terraform"
+  }
 }
 
 variable "subscription_id" {
